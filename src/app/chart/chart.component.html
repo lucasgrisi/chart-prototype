@@ -1,0 +1,43 @@
+<!--div class="container">
+  <div class="row">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [value]="box" (keyup)="updateBox($event)">
+      <div class="input-group-prepend">
+        <button class="input-group-text" (click)="addBox()" >Send</button>
+      </div>
+    </div>
+  </div>
+    <div class="example-boundary">
+      <div class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
+          oi
+      </div>
+    </div>
+</div-->
+
+
+<!--div class="example-box" cdkDrag>Drag me around!</div-->
+
+
+<div class="items-container">
+    <div appDraggable>
+        <svg height="100" width="100">
+            <circle id="circle-red" cx="50" cy="50" r="40" stroke="black" fill="red" />
+        </svg>
+    </div>
+    <div appDraggable>
+        <svg height="100" width="100">
+            <circle id="circle-blue" cx="50" cy="50" r="40" stroke="black" fill="blue" />
+        </svg>
+    </div>
+    <div appDraggable>
+        <svg height="100" width="100">
+            <circle id="circle-green" cx="50" cy="50" r="40" stroke="black" fill="green" />
+        </svg>
+    </div>
+</div>
+<div class="svg-container" appDroppable>
+    <svg id="dropzone" height="100%" width="100%">
+    </svg>
+</div>
+
+
