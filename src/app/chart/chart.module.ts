@@ -1,3 +1,4 @@
+import { ChartComponent } from './chart.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {DragDropModule} from '@angular/cdk/drag-drop';
@@ -8,6 +9,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     CommonModule,
     DragDropModule
   ],
-  declarations: []
+  declarations: [ChartComponent],
+  exports: [ChartComponent]
 })
 export class ChartModule { }

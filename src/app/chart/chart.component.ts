@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ChartComponent implements OnInit {
 
   box: String = '';
-  boxArray = [];
+  apps = [];
 
   
   constructor() { }
@@ -17,8 +17,8 @@ export class ChartComponent implements OnInit {
   }
 
   addBox(){
-    this.boxArray.push(this.box);
-    console.log(this.boxArray);
+    this.apps.push(this.box);
+    console.log(this.apps);
   }
 
   updateBox(event){

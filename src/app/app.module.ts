@@ -1,17 +1,17 @@
-import { ChartComponent } from './chart/chart.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { ChartModule } from './chart/chart.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ChartComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
