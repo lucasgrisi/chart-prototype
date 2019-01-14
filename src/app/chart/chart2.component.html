@@ -10,20 +10,19 @@
             <button (click)="apagaLig()" >Refazer</button>
         </div>
     </div>
-    <div class="canvas-border">
-            <canvas id="canvas"></canvas>
-    </div>
-    <div class="row">  
-        <div name="box" id="box" class="example-box col-md-4" cdkDragBoundary=".example-boundary" 
+    <div class="example-boundary">
+        <svg class="example-boundary">
+                <g svg-line *ngFor="let line of lines"
+                [line]="line"
+                (lineMousedown)="onLineClick($event)"></g>  
+        </svg>
+        <div name="box" id="box" class="example-box" cdkDragBoundary=".example-boundary" 
             cdkDrag *ngFor="let tag of tags" (click)="checkPosition()" (dblclick)="setinha(tag.id)"
             [cdkDragDisabled]="tag.disabled">
             {{ tag.id }}
         </div>
     </div>
-    
 </div>
-
-<!--div class="example-box" cdkDrag>Drag me around!</div-->
 
 
 
