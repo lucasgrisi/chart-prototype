@@ -3,15 +3,19 @@
         <div class="input-group mb-3">
         <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [value]="box" (keyup)="updateBox($event)">
         <div class="input-group-prepend">
-            <button class="input-group-text" (click)="addBox()" >Send</button>
+            <button class="input-group-text" (click)="addBox()" (click)="checkPosition()">Send</button>
         </div>
         </div>
     </div>
-    <div class="example-boundary">
-        <div class="example-box" cdkDragBoundary=".example-boundary" cdkDrag *ngFor="let app of apps">
-            {{ app }}
+    <div class="canvas-border">
+            <canvas id="canvas"></canvas>
+    </div>
+    <div class="row">  
+        <div name="box" id="box" class="example-box col-md-4" cdkDragBoundary=".example-boundary" cdkDrag *ngFor="let tag of tags" (click)="checkPosition()" (dblclick)="setinha(tag)">
+            {{ tag }}
         </div>
     </div>
+    
 </div>
 
 <!--div class="example-box" cdkDrag>Drag me around!</div-->
