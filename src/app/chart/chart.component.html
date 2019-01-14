@@ -11,8 +11,11 @@
             <canvas id="canvas"></canvas>
     </div>
     <div class="row">  
-        <div name="box" id="box" class="example-box col-md-4" cdkDragBoundary=".example-boundary" cdkDrag *ngFor="let tag of tags" (click)="checkPosition()" (dblclick)="setinha(tag)">
-            {{ tag }}
+        <div name="box" id="box" class="example-box col-md-4" cdkDragBoundary=".example-boundary" 
+            cdkDrag *ngFor="let tag of tags" (click)="checkPosition()" (dblclick)="setinha(tag.id)"
+            [cdkDragDisabled]="tag.disabled"
+        >
+            {{ tag.id }}
         </div>
     </div>
     
