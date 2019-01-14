@@ -87,6 +87,9 @@ export class ChartComponent implements OnInit {
     var canvas = document.getElementsByTagName('canvas');
     var ctx = canvas[0].getContext('2d');
     ctx.clearRect(0, 0, 300, 150);
+    for(let i=0;i<this.tam;i++){
+      this.apps[`${this.tags[i].id}`].disabled=false;
+    }
   }
 
 }
