@@ -83,4 +83,10 @@ export class ChartComponent implements OnInit {
   
   }
 
+  apagaLig(){
+    var canvas = document.getElementsByTagName('canvas');
+    var ctx = canvas[0].getContext('2d');
+    ctx.clearRect(0, 0, 300, 150);
+  }
+
 }

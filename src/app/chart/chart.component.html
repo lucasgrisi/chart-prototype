@@ -1,10 +1,15 @@
 <div class="container">
     <div class="row">
         <div class="input-group mb-3">
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [value]="box" (keyup)="updateBox($event)">
-        <div class="input-group-prepend">
-            <button class="input-group-text" (click)="addBox()" (click)="checkPosition()">Send</button>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [value]="box" (keyup)="updateBox($event)">
+            <div class="input-group-prepend">
+                <button class="input-group-text" (click)="addBox()" (click)="checkPosition()">Send</button>
+            </div>
         </div>
+        <div class="col-mb-3 col-lg-3">
+            <div class="row">
+                <button (click)="apagaLig()" >Refazer</button>
+            </div>
         </div>
     </div>
     <div class="canvas-border">
