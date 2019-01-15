@@ -16,6 +16,7 @@ export class ChartComponent implements OnInit {
   dbclick = 0;
   posis = [];
   lines = [];
+  modalData;
 
 
   
@@ -25,20 +26,35 @@ export class ChartComponent implements OnInit {
   }
 
   addBox(){
-    this.tags[this.tam] = {
-      id:this.box,
-      disabled:false
-    };
-    this.apps[`${this.box}`] = {
-      index:this.tam,
-      id: this.box,
-      posicao: {
-        x : null,
-        y : null
-      },
-      ligacao : null
-    };
-    this.tam++;
+    var ok=true;
+    for(let i=0;i<this.tam && ok;i++){
+      if(this.tags[i].id === this.box) ok=false;
+    }
+    if(ok && this.box !== ''){
+      this.tags[this.tam] = {
+        id:this.box,
+        disabled:false
+      };
+      this.apps[`${this.box}`] = {
+        index:this.tam,
+        id: this.box,
+        posicao: {
+          x : null,
+          y : null
+        },
+        ligacao : [],
+        appLabel:null,
+        imageVersion:null,
+        replicas:null,
+        portaExterna:null,
+        cpuLimit:null,
+        cpuBase:null,
+        memoryLimit:null,
+        memoryBase:null
+      };
+      this.tam++;  
+    }
+    this.box = '';
   }
 
   updateBox(event){
@@ -78,8 +94,8 @@ export class ChartComponent implements OnInit {
 
       this.tags[this.apps[`${tag}`].index].disabled=true;
       this.tags[this.apps[`${this.posis[0].id}`].index].disabled=true;
-      this.apps[`${tag}`].ligacao = this.posis[0].id;
-      this.apps[`${this.posis[0].id}`].ligacao = this.posis[1].id;
+      this.apps[`${tag}`].ligacao.push(this.posis[0].id);
+      this.apps[`${this.posis[0].id}`].ligacao.push(this.posis[1].id);
 
       console.log(this.posis);
       this.dbclick=0;
@@ -105,5 +121,6 @@ export class ChartComponent implements OnInit {
     this.posis = [];
     this.lines = [];
   }
+
 
 }

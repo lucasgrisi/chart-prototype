@@ -123,5 +123,9 @@
       }
     }
   },
-  "defaultProject": "chart-prototype"
+  "defaultProject": "chart-prototype",
+  "styles": [
+    "node_modules/bootstrap/dist/css/bootstrap.min.css",
+    "styles.scss"
+  ]
 }

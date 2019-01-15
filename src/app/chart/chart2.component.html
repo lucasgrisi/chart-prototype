@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [value]="box" (keyup)="updateBox($event)">
+        <div class="input-group col-mb-3 col-lg-3">
+            <input type="text" [value]="box" (keyup)="updateBox($event)" (keyup.enter)="addBox()">
             <div class="input-group-prepend">
                 <button class="input-group-text" (click)="addBox()" (click)="checkPosition()">Send</button>
             </div>
@@ -21,6 +21,26 @@
             [cdkDragDisabled]="tag.disabled">
             {{ tag.id }}
         </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div *ngFor="let tag of tags"  class="col-mb-3 col-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ tag.id }}</h5>
+                    <h6>Especificações</h6>
+                    <p style="color: orange; font-weight: bold;font-size: x-small">App Label: {{ apps[tag.id].appLabel }}</p>
+                    <p style="color: orange; font-weight: bold;font-size: x-small">Versão da Imagem: {{ apps[tag.id].imageVersion }}</p>
+                    <p style="color: orange; font-weight: bold;font-size: x-small">Replicas: {{ apps[tag.id].replicas }}</p>
+                    <p style="color: orange; font-weight: bold;font-size: x-small">Porta Externa: {{ apps[tag.id].portaExterna }}</p>
+                    <p style="color: orange; font-weight: bold;font-size: x-small">Limite de CPU: {{ apps[tag.id].cpuLimit }}</p>
+                    <p style="color: orange; font-weight: bold;font-size: x-small">Limite de Memória: {{ apps[tag.id].memoryLimit }}</p>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 
